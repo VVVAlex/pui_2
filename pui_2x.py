@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import array
 import csv
 import time
@@ -935,7 +936,7 @@ class App(ctk.CTk):
         y = str(int(tmp2[2]) + 1)
         self.geometry(f"{width}x{height}+{x}+{y}")  # дергаем окно
 
-    def _change_appearance_mode(self, new_appearance_mode) -> None:
+    def _change_appearance_mode(self, new_appearance_mode: str) -> None:
         """Сменить тему"""
         if new_appearance_mode == "Dark":
             self.s.configure("TSizegrip", background="grey19")
@@ -1083,4 +1084,6 @@ if __name__ == "__main__":
     app = App()
     # app.attributes("-fullscreen", True)       # во весь экран без кнопок
     # app.state('zoomed')                       # развернутое окно
+
+
     app.mainloop()

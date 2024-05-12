@@ -1,18 +1,9 @@
 #!/usr/bin/env python
-
-# import os.path
-# import pathlib
 import tkinter as tk
 import tkinter.ttk as ttk
-
 import customtkinter as ctk
-
 from common import font, font_size, load_image, load_image_tk  # create_images,
-
-# from db_pdf import go_pdf
 from top_widget import CTkTop
-
-# list_images = ("open", "delete3", "print", "pdf")
 
 
 class Editor:
@@ -63,10 +54,8 @@ class Editor:
             fg_color="transparent",
         ).pack(side=tk.LEFT, fill=tk.X, expand=False)
         # ttk.Separator(f, orient=tk.VERTICAL).pack(side=tk.LEFT, fill=tk.Y)
-
         # s = ttk.Style()
         # s.configure('TSizegrip', background='grey19')
-
         # ttk.Sizegrip(f).pack(side=tk.RIGHT, padx=3)           #
 
         f_btn = ctk.CTkFrame(f, corner_radius=0, fg_color="transparent")
@@ -106,22 +95,22 @@ class Editor:
         """Получить текст из редактора"""
         return self.st.get("1.0", tk.END + "-1c")
 
-    def clr_text(self):
+    def clr_text(self) -> None:
         """Очистить редактор"""
         self.st.delete("1.0", tk.END)
 
-    def set_info(self, msg):
+    def set_info(self, msg: str):
         """Вывести msg в правый лабель"""
         return self.dir_info.set(msg)
 
-    def cancel_(self, arg=None):
+    def cancel_(self, arg=None) -> None:
         """Скрыть редактор"""
         self.st.delete(1.0, tk.END)
         self.parent.ed_frame.grid_remove()
         # geom = self.parent.geometry().split("+")
         # self.parent.geometry(f"1051x300+{geom[1]}+{geom[-1]}")
 
-    def save_(self, arg=None):
+    def save_(self, arg=None) -> None:
         """Сохранить комментарий"""
         text = self._gettext()
         self.parent.save_comment(text)

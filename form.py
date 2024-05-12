@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 from tkinter import ttk
 import customtkinter as ctk
 from common import family, font_size

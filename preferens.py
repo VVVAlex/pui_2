@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import tkinter as tk
 import customtkinter as ctk
 from floatspinbox import FloatSpinbox as Spinbox

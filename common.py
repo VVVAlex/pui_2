@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import configparser
 import functools
 import operator
@@ -7,11 +6,8 @@ import os.path
 import pathlib
 import sys
 from dataclasses import dataclass
-
 import customtkinter as ctk
 from PIL import Image, ImageTk
-
-# import tkinter.messagebox as box
 from ctkmessagebox import CTkMessagebox as Box
 
 # От вас и не ожидают, что вы это поймете.
@@ -97,7 +93,6 @@ file = path.joinpath("config.ini")
 img_path = path.joinpath("images")
 
 if not file.exists():
-    # box.showerror('ERROR!', 'Отсутствует \nили поврежден\nфайл config.ini')
     Box(
         title="",
         message="Отсутствует \nили поврежден\nфайл config.ini",
@@ -167,40 +162,12 @@ def load_image(im, im_2=None, size: tuple = ()) -> ctk.CTkImage:
         return ctk.CTkImage(Image.open(path_to_image), size=size)
 
 
-# img_records = load_image(
-#     im=img_path.joinpath("record2.png"),
-#     im_2=img_path.joinpath("record1.png"),
-#     size=(25, 25),
-# )
-
-
-# img_pause = load_image(
-#     im=img_path.joinpath("pause2.png"),
-#     im_2=img_path.joinpath("pause1.png"),
-#     size=(25, 25),
-# )
-
-
-def load_image_tk(im, size: tuple = ()) -> ImageTk.PhotoImage:
+def load_image_tk(im: str, size: tuple = ()) -> ImageTk.PhotoImage:
     """Загрузить изображения"""
     path_to_img = img_path.joinpath(im)
     if not size:
         size = (20, 20)
     return ImageTk.PhotoImage(Image.open(path_to_img).resize((size[0], size[1])))
-
-
-# def create_images(light: tuple, dark: tuple = None, size: tuple = (20, 20)) -> dict:
-#     """Содать словарь с изображениями в зависимости от темы"""
-#     image_dict = {}
-#     appearance_mode = config.getint("Font", "app_mode")
-#     if dark:
-#         list_images = light if appearance_mode else dark
-#     else:
-#         list_images = light
-#     for im in list_images:
-#         img = im[:-1] if dark else im
-#         image_dict[img] = load_image(f"{im}.png", im_2=None, size=size)
-#     return LookupDict(image_dict)
 
 
 if getattr(sys, "frozen", False):

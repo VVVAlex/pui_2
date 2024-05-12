@@ -1,12 +1,8 @@
 #!/usr/bin/env python
-
 import customtkinter as ctk
 from tkinter import ttk
 from typing import Union, Callable
 from common import family, font_size
-
-# family = "Roboto Medium"
-# font_size = -16
 
 
 class FloatSpinbox(ctk.CTkFrame, ttk.Spinbox):

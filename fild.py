@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import array
 import hashlib
 import pathlib
@@ -157,7 +156,7 @@ class Fild(ctk.CTkFrame):
                     icon="cancel",
                 )
 
-    def create_error(self, tag) -> None:
+    def create_error(self, tag: str) -> None:
         """Выводим на канвас сообщение 'Нет связи с ППУ'  или 'Нет данных'"""
         txt = "Нет связи с ППУ" if tag == "error" else "Нет данных!"
         self.canv.delete(tag)
@@ -456,7 +455,7 @@ class Fild(ctk.CTkFrame):
                     )
         # print(len(self.root.data_deq), len(self.root.data_deq_50), len(self.root.data_deq_25))
 
-    def show(self, data_point, data_ampl, data_len) -> None:
+    def show(self, data_point: array.array, data_ampl: array.array, data_len: array.array) -> None:
         """"""
         self._update_scale(data_point)
         self.show_point(data_point, data_ampl, data_len)

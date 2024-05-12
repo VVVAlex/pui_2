@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import tkinter as tk
 from tkinter import StringVar
 import customtkinter as ctk
