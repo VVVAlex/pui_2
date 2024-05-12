@@ -716,7 +716,8 @@ class App(ctk.CTk):
             delay = self.delay_b6
         return delay
 
-    def calc_n(self, depth: str) -> float:
+    @staticmethod
+    def calc_n(depth: str) -> float:
         """Вычислить множитель"""
         if depth == "L":
             n = 0.4
