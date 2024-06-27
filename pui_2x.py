@@ -218,7 +218,7 @@ class App(ctk.CTk):
         self.board = self.board_50  # for bind_
 
         self.st_bar = Footer(self)  # строка состояния
-        self.st_bar.grid(row=2, column=0, columnspan=2, sticky="we", pady=(0, 6))
+        self.st_bar.grid(row=2, column=0, columnspan=2, sticky="we", pady=(0, 0))
         self.st_bar.grid_columnconfigure(0, weight=1)
 
         self.g_ser = PortThread(self.gps_read_data)
